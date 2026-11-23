@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Filament\Admin\Resources\Orders;
+
+use App\Filament\Admin\Resources\Orders\Pages\ListOrders;
+use App\Filament\Admin\Resources\Orders\Tables\OrdersTable;
+use App\Models\Order;
+use BackedEnum;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
+
+class OrderResource extends Resource
+{
+    protected static ?string $model = Order::class;
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentList;
+
+    protected static ?string $navigationLabel = 'Orders';
+
+    protected static ?string $recordTitleAttribute = 'id';
+
+    public static function form(Schema $schema): Schema
+    {
+        return $schema->components([]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return OrdersTable::configure($table);
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => ListOrders::route('/'),
+        ];
+    }
+}

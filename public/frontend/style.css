@@ -1,0 +1,28 @@
+/* Frontend site styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #f85f11;
+    --secondary: #04a53f;
+    --text: #363636;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
